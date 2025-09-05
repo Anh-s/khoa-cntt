@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoa CNTT - Thúc đẩy Tương lai Số</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome cho Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            @apply text-gray-800;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517032420370-1d898144b64e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            @apply bg-indigo-600 mx-auto mt-4 rounded-full;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up:nth-child(1) { animation-delay: 0.3s; }
+        .animate-fade-in-up:nth-child(2) { animation-delay: 0.6s; }
+        .animate-fade-in-up:nth-child(3) { animation-delay: 0.9s; }
+        .animate-fade-in-up:nth-child(4) { animation-delay: 1.2s; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-indigo-700 hover:text-indigo-900 transition duration-300">
+                <i class="fas fa-microchip text-3xl"></i>
+                <span>Khoa CNTT</span>
+            </a>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Trang Chủ</a></li>
+                <li><a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Giới Thiệu</a></li>
+                <li><a href="#services" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Dịch Vụ</a></li>
+                <li><a href="#projects" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Dự Án</a></li>
+                <li><a href="#team" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Đội Ngũ</a></li>
+                <li><a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Liên Hệ</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 shadow-lg">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="#home" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Trang Chủ</a></li>
+                <li><a href="#about" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Giới Thiệu</a></li>
+                <li><a href="#services" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Dịch Vụ</a></li>
+                <li><a href="#projects" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Dự Án</a></li>
+                <li><a href="#team" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Đội Ngũ</a></li>
+                <li><a href="#contact" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg flex items-center justify-center min-h-screen text-white text-center py-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                    Thúc đẩy Tương lai Số của Bạn
+                </h1>
+                <p class="text-lg md:text-xl mb-8 animate-fade-in-up">
+                    Khoa Công nghệ Thông tin cam kết cung cấp giải pháp sáng tạo, hạ tầng vững chắc và hỗ trợ chuyên nghiệp để thúc đẩy tiến bộ và kết nối môi trường số.
+                </p>
+                <div class="space-x-4 animate-fade-in-up">
+                    <a href="#services" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg inline-block">
+                        Khám Phá Dịch Vụ
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg inline-block mt-4 md:mt-0">
+                        Liên Hệ Ngay
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading text-3xl md:text-4xl font-bold text-center mb-12">Giới Thiệu Khoa</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Đội ngũ CNTT" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                    </div>
+                    <div class="md:w-1/2 text-lg leading-relaxed">
+                        <p class="mb-6">
+                            Khoa Công nghệ Thông tin là trụ cột của các hoạt động số trong tổ chức. Chúng tôi là đội ngũ chuyên nghiệp tận tâm, tận dụng công nghệ để nâng cao năng suất, bảo mật và đổi mới trong mọi phòng ban. Sứ mệnh của chúng tôi là cung cấp dịch vụ CNTT đáng tin cậy, an toàn và tiên tiến, giúp mọi người phát triển và tổ chức tiến lên.
+                        </p>
+                        <p class="mb-6">
+                            Từ quản lý hạ tầng mạng phức tạp, phát triển phần mềm tùy chỉnh đến đảm bảo an ninh mạng và hỗ trợ kỹ thuật nhanh chóng, chúng tôi bao phủ toàn diện nhu cầu CNTT. Chúng tôi tin vào việc giải quyết vấn đề chủ động, cải tiến liên tục và phát triển văn hóa xuất sắc về công nghệ.
+                        </p>
+                        <p>
+                            Tầm nhìn của chúng tôi là được công nhận là đối tác chiến lược, mang lại giá trị vượt trội qua công nghệ và đảm bảo trải nghiệm số liền mạch, hiệu quả và an toàn cho tất cả mọi người.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Statistics Section -->
+        <section class="py-16 bg-indigo-700 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Tác Động Của Chúng Tôi</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="p-6 bg-indigo-800 rounded-lg shadow-lg">
+                        <i class="fas fa-users-cog text-5xl mb-4 text-indigo-300"></i>
+                        <p class="text-4xl font-bold mb-2">500+</p>
+                        <p class="text-lg">Người dùng hỗ trợ</p>
+                    </div>
+                    <div class="p-6 bg-indigo-800 rounded-lg shadow-lg">
+                        <i class="fas fa-project-diagram text-5xl mb-4 text-indigo-300"></i>
+                        <p class="text-4xl font-bold mb-2">150+</p>
+                        <p class="text-lg">Dự án hoàn thành</p>
+                    </div>
+                    <div class="p-6 bg-indigo-800 rounded-lg shadow-lg">
+                        <i class="fas fa-shield-alt text-5xl mb-4 text-indigo-300"></i>
+                        <p class="text-4xl font-bold mb-2">99.9%</p>
+                        <p class="text-lg">Thời gian hệ thống hoạt động</p>
+                    </div>
+                    <div class="p-6 bg-indigo-800 rounded-lg shadow-lg">
+                        <i class="fas fa-headset text-5xl mb-4 text-indigo-300"></i>
+                        <p class="text-4xl font-bold mb-2">24/7</p>
+                        <p class="text-lg">Hỗ trợ liên tục</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading text-3xl md:text-4xl font-bold text-center mb-12">Dịch Vụ Chính</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md text-center">
+                        <i class="fas fa-network-wired text-5xl text-indigo-600 mb-6"></i>
+                        <h3 class="text-xl font-semibold mb-4">Quản Lý Mạng</h3>
+                        <p class="text-gray-700">
+                            Thiết kế, triển khai và duy trì hạ tầng mạng vững chắc và an toàn, đảm bảo kết nối và luồng dữ liệu liền mạch.
+                        </p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md text-center">
+                        <i class="fas fa-laptop-code text-5xl text-indigo-600 mb-6"></i>
+                        <h3 class="text-xl font-semibold mb-4">Phát Triển Phần Mềm</h3>
+                        <p class="text-gray-700">
+                            Phát triển phần mềm tùy chỉnh và ứng dụng phù hợp với nhu cầu tổ chức, nâng cao hiệu quả và đổi mới.
+                        </p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md text-center">
+                        <i class="fas fa-shield-alt text-5xl text-indigo-600 mb-6"></i>
+                        <h3 class="text-xl font-semibold mb-4">An Ninh Mạng</h3>
+                        <p class="text-gray-700">
+                            Bảo vệ tài sản số khỏi các mối đe dọa với các giao thức bảo mật tiên tiến, kiểm tra định kỳ và chiến lược phòng ngừa.
+                        </p>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md text-center">
+                        <i class="fas fa-headset text-5xl text-indigo-600 mb-6"></i>
+                        <h3 class="text-xl font-semibold mb-4">Hỗ Trợ Kỹ Thuật</h3>
+                        <p class="text-gray-700">
+                            Cung cấp hỗ trợ kỹ thuật nhanh chóng và hiệu quả, giải quyết sự cố và đảm bảo hoạt động mượt mà.
+                        </p>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md text-center">
+                        <i class="fas fa-cloud text-5xl text-indigo-600 mb-6"></i>
+                        <h3 class="text-xl font-semibold mb-4">Giải Pháp Đám Mây</h3>
+                        <p class="text-gray-700">
+                            Triển khai và quản lý dịch vụ đám mây cho khả năng mở rộng, linh hoạt và lưu trữ dữ liệu an toàn.
+                        </p>
+                    </div>
+                    <!-- Service Card 6 -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md text-center">
+                        <i class="fas fa-database text-5xl text-indigo-600 mb-6"></i>
+                        <h3 class="text-xl font-semibold mb-4">Quản Lý Dữ Liệu</h3>
+                        <p class="text-gray-700">
+                            Đảm bảo lưu trữ, truy xuất và bảo toàn dữ liệu quan trọng, bao gồm sao lưu và kế hoạch phục hồi thảm họa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading text-3xl md:text-4xl font-bold text-center mb-12">Our Latest Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project Alpha" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Hệ Thống CRM Nội Bộ</h3>
+                            <p class="text-gray-700 mb-4">
+                                Phát triển hệ thống Quản lý Mối quan hệ Khách hàng tùy chỉnh giúp tối ưu hóa tương tác với khách hàng và theo dõi dữ liệu hiệu quả.
+                            </p>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Tìm Hiểu Thêm <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3ce7b7bfa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project Beta" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Nâng Cấp An Ninh Mạng</h3>
+                            <p class="text-gray-700 mb-4">
+                                Triển khai nâng cấp toàn diện các giao thức bảo mật mạng, cải thiện khả năng bảo vệ dữ liệu và phát hiện mối đe dọa.
+                            </p>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Tìm Hiểu Thêm <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project Gamma" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Chuyển Đám Mây</h3>
+                            <p class="text-gray-700 mb-4">
+                                Thành công di chuyển dữ liệu và ứng dụng quan trọng của tổ chức lên môi trường đám mây an toàn, tăng khả năng mở rộng.
+                            </p>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Tìm Hiểu Thêm  <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section id="team" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading text-3xl md:text-4xl font-bold text-center mb-12">Đội Ngũ Chuyên Gia</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734b2a4?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jane Doe" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-200">
+                        <h3 class="text-xl font-semibold">Jane Doe</h3>
+                        <p class="text-indigo-600 mb-2">Giám Đốc CNTT</p>
+                        <p class="text-gray-600 text-sm">
+                            Nhà lãnh đạo có tầm nhìn, dẫn dắt khoa hướng tới sự xuất sắc và đổi mới công nghệ.
+                        </p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="John Smith" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-200">
+                        <h3 class="text-xl font-semibold">John Smith</h3>
+                        <p class="text-indigo-600 mb-2">Kỹ Sư Mạng Trưởng</p>
+                        <p class="text-gray-600 text-sm">
+                            Chuyên gia kiến trúc mạng, đảm bảo kết nối mạnh mẽ và an toàn cho mọi hoạt động.
+                        </p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Emily White" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-200">
+                        <h3 class="text-xl font-semibold">Emily White</h3>
+                        <p class="text-indigo-600 mb-2">Nhà Phát Triển Phần Mềm Cao Cấp</p>
+                        <p class="text-gray-600 text-sm">
+                            Sáng tạo các giải pháp phần mềm đổi mới và thúc đẩy các sáng kiến phát triển.
+                        </p>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="David Lee" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-200">
+                        <h3 class="text-xl font-semibold">David Lee</h3>
+                        <p class="text-indigo-600 mb-2">Chuyên Gia An Ninh Mạng</p>
+                        <p class="text-gray-600 text-sm">
+                            Chuyên tâm bảo vệ tài sản kỹ thuật số và duy trì an ninh vững chắc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="py-16 md:py-24 bg-indigo-50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading text-3xl md:text-4xl font-bold text-center mb-12">Liên Hệ Với Chúng Tôi</h2>
+                <div class="flex flex-col lg:flex-row lg:space-x-12">
+                    <!-- Contact Information -->
+                    <div class="lg:w-1/2 mb-10 lg:mb-0 bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6 text-indigo-700">Thông Tin Liên Hệ</h3>
+                        <div class="space-y-6 text-lg">
+                            <p class="flex items-center"><i class="fas fa-map-marker-alt text-indigo-600 mr-4 text-xl"></i>123 Đại lộ Công Nghệ, Thành phố Đổi Mới, IT 90210</p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt text-indigo-600 mr-4 text-xl"></i> +1 (555) 123-4567</p>
+                            <p class="flex items-center"><i class="fas fa-envelope text-indigo-600 mr-4 text-xl"></i> info@itdept.org</p>
+                            <p class="flex items-center"><i class="fas fa-clock text-indigo-600 mr-4 text-xl"></i>Thứ 2 - Thứ 6: 9:00 AM - 5:00 PM</p>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="text-xl font-semibold mb-4 text-indigo-700">Theo Dõi Chúng Tôi</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 text-3xl transition duration-300"><i class="fab fa-facebook-square"></i></a>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 text-3xl transition duration-300"><i class="fab fa-twitter-square"></i></a>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 text-3xl transition duration-300"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 text-3xl transition duration-300"><i class="fab fa-instagram-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6 text-indigo-700">Gửi Tin Nhắn</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Họ và Tên</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" placeholder="john.doe@example.com" required>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Tiêu đề</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" placeholder="Inquiry about services">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Nội dung</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
+                                Gửi Tin Nhắn <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-lg font-bold">
+                    <i class="fas fa-microchip mr-2"></i> Khoa CNTT
+                </div>
+                <div class="text-gray-400">
+                    &copy; 2023 Khoa CNTT. Bảo lưu mọi quyền.
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="mt-8 text-gray-500 text-sm">
+                Thiết kế với <i class="fas fa-heart text-red-500 mx-1"></i> sử dụng Tailwind CSS & JavaScript.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // JavaScript for Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // JavaScript for Contact Form Submission (Placeholder)
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent actual form submission
+
+                // Simulate form submission
+                alert('Thank you for your message! We will get back to you shortly.');
+
+                // Optionally, clear the form
+                contactForm.reset();
+            });
+        }
+
+        // Optional: Add a scroll-reveal effect for sections (more advanced JS)
+        // This uses Intersection Observer API
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-visible');
+                    // Add specific animations based on section if needed
+                    if (entry.target.id === 'home') {
+                        // Hero section already has its own animation
+                    } else {
+                        entry.target.querySelectorAll('.section-heading, p, .service-card, .bg-gray-100, .bg-white').forEach((el, index) => {
+                            el.style.animationDelay = `${index * 0.1}s`;
+                            el.classList.add('animate-fade-in-up');
+                        });
+                    }
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            // Only apply scroll-reveal to sections after the hero
+            if (section.id !== 'home') {
+                section.classList.add('opacity-0'); // Hide initially for animation
+                observer.observe(section);
+            }
+        });
+
+        // Custom CSS for fade-in-visible class
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .fade-in-visible {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
